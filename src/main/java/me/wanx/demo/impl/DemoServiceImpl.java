@@ -13,9 +13,13 @@ public class DemoServiceImpl implements DemoService {
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	@Override
-	public void sayHeoll() {
+	public void sayHeoll() throws Exception {
 		logger.info("=============================");
 		logger.info("DemoServiceImpl sayHello!");
+		if(true){
+			//验证异常 action是否可以捕获
+			throw new Exception("sayHeoll exception");
+		}
 	}
 
 }

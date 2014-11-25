@@ -1,6 +1,6 @@
 package me.wanx.demo;
 
 public interface DemoService {
-	public void sayHeoll();
+	public void sayHeoll() throws Exception;
 
 }

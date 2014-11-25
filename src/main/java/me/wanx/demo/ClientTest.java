@@ -19,7 +19,11 @@ public class ClientTest {
 		//HttpInvokerPostProcessor post = (HttpInvokerPostProcessor)ctx.getBean("httpInvokerPostProcessorService");
 		ClientTest clientTest = (ClientTest)ctx.getBean("clientTest");
 		logger.info("========================" + clientTest.demoService);
-		clientTest.demoService.sayHeoll();
+		try {
+			clientTest.demoService.sayHeoll();
+		} catch (Exception e) {
+			logger.error("catch demoService exception",e);
+		}
 	}
 	
 	@HttpInvokerClient(remoteServiceUrl="demo.demoService")
