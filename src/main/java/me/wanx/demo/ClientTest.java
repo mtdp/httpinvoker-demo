@@ -1,12 +1,12 @@
 package me.wanx.demo;
 
+import me.wanx.demo.httpinvoker.HttpInvokerClient;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Service;
-
-import me.wanx.demo.httpinvoker.HttpInvokerClient;
 
 @Service("clientTest")
 public class ClientTest {
@@ -26,6 +26,13 @@ public class ClientTest {
 		}
 	}
 	
+	/**
+	 * 
+	 * @param demoService
+	 * @me.wanx.demo.httpinvoker.HttpInvokerClient(remoteServiceUrl="demo.demoService")
+	 * @HttpInvokerClient(remoteServiceUrl="demo.demoService")
+	 * 以上2中方式都可以
+	 */
 	@HttpInvokerClient(remoteServiceUrl="demo.demoService")
 	public void setDemoService(DemoService demoService){
 		this.demoService = demoService;
